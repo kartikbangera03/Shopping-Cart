@@ -1,0 +1,17 @@
+.navBar{
+    border: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.navBarLeft{
+    display: flex;
+    align-items: center;
+    border: 1px solid blue;
+    gap: 20px;
+}
+
+
+

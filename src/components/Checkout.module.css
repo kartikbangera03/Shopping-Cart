@@ -1,0 +1,21 @@
+.cartAndOrderSummary {
+    display: flex;
+}
+
+.checkoutContainer {
+    border: 1px solid blue;
+}
+
+.orderSummary {
+    border: 1px solid red;
+}
+
+.cart {
+    width: 600px;
+    height: max-content;
+    border: 1px solid grey;
+}
+
+.subtotal{
+    display: flex;
+}
