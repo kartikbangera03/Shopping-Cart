@@ -3,7 +3,7 @@ import CheckoutCard from "./CheckoutCard";
 import style from "./Checkout.module.css";
 
 const Checkout = ()=>{
-    const[storeItems , cartItems, setCartItems] = useOutletContext();
+    const[storeItems , cartItems, setCartItems, filteredStoreItems , setFilteredStoreItems] = useOutletContext();
     console.log("In checkout");
     let cartTotalAmount = 0;
     cartItems.forEach((item)=>{
@@ -17,33 +17,40 @@ const Checkout = ()=>{
     const finalTotal = cartTotalAmount + vat;
     return (
         <div className={style.checkoutContainer}>
-            <p>Shopping Bag</p>
+            
             <div className={style.cartAndOrderSummary}>
+                
                 <div className={style.cart}>
-                    {cartItems.map((item)=>(
-                        <CheckoutCard
-                            item={item}
-                            cartItems = {cartItems}
-                            setCartItems={(newArray)=>setCartItems(newArray)}
-                        />
-                    ))}
+                    <p className={style.title}>Shopping Bag</p>
+                        {cartItems.map((item)=>(
+                            <CheckoutCard
+                                item={item}
+                                cartItems = {cartItems}
+                                setCartItems={(newArray)=>setCartItems(newArray)}
+                            />
+                        ))}
                 </div>
-                <div className={style.orderSummary}></div>
-                    <p>Order Summary</p>
-                    <h3>{finalTotal}</h3>
-                    <div className={style.subtotal}>
-                        <p>Subtotal {cartItems.length} items</p>
-                        <p>{cartTotalAmount}</p>
-                    </div>
-                    <div className={style.subtotal}>
-                        <p>Vat (20%)</p>
-                        <p>{vat}</p>
-                    </div>
-                    <div className={style.subtotal}>
-                        <p>Total</p>
-                        <p>{finalTotal}</p>
-                    </div>
-                    <button>Checkout</button>
+                
+                <div className={style.orderSummary}>
+                    <h3>Order Summary</h3>
+                        <h2>$ {Math.round(finalTotal*100)/100}</h2>
+                        <div className={style.subtotal}>
+                            <p>Subtotal {cartItems.length} items</p>
+                            <p>$ {Math.round(cartTotalAmount*100)/100}</p>
+                        </div>
+                        <div className={style.subtotal}>
+                            <p>Vat (20%)</p>
+                            <p>$ {Math.round(vat*100)/100}</p>
+                        </div>
+                        <div className={style.total}>
+                            <p>Total</p>
+                            <p>$ {Math.round(finalTotal*100)/100}</p>
+                        </div>
+                        <button className={style.checkoutButton}>Checkout</button>
+
+
+                </div>
+                    
 
             </div>
         </div>

@@ -5,7 +5,8 @@ import App from './App.jsx';
 import Home from './components/Home.jsx';
 import Store from './components/Store.jsx';
 import Checkout from './components/Checkout.jsx';
-
+import ErrorPage from './components/ErrorPage.jsx';
+import ItemDescription from './components/ItemDescription.jsx';
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,9 @@ const router = createBrowserRouter([
     children:[
       {index:true , element:<Home/>},
       {path:"store" , element:<Store/>},
+      {path:"store/:id",element:<ItemDescription/>},
       {path:"checkout" , element:<Checkout/>},
+      {path:"*",element:<ErrorPage/>}
     ],
   },
 

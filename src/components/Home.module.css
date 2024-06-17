@@ -1,0 +1,120 @@
+@font-face {
+    font-family: Roboto-Black;
+    src: url("../assets/Roboto/Roboto-Black.ttf");
+}
+
+@font-face {
+    font-family: Roboto-Bold;
+    src: url("../assets/Roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+    font-family: Roboto-Light;
+    src: url("../assets/Roboto/Roboto-Light.ttf");
+}
+
+.homePageContainer{
+    display: flex;
+    justify-content: center;
+}
+
+
+.homePage{
+    display: block;
+    width: 600px;
+    height: 20%;
+    text-align: center;
+    position: relative;
+    /* left: 25%; */
+    margin-top: 5rem;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+
+
+}
+
+.homePage h2{
+    font-size: 3rem;
+    font-family: Roboto-Black;
+}
+
+.homePage h3{
+    font-size: 1.8rem;
+    font-family: Roboto-Bold;
+    color: grey;
+}
+
+.homePage p{
+    font-size: 1.5rem;
+    font-family: Roboto-Light;
+    color: lightgray;
+
+}
+
+.homePage button{
+    font-size: 1.2rem;
+    width: 140px;
+    height: 70px;
+    border-radius: 5px;
+    border: none;
+    font-family: Roboto-Bold;
+}
+
+.homePage button:hover{
+
+    background-color: dodgerblue;
+    color: white;
+}
+
+
+@media only screen and (max-width : 500px) {
+    .homePageContainer{
+        min-height: 90vh;
+        display: flex;
+        /* border: 1px solid black; */
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    .homePage{
+        
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        position: static;
+        margin-top: 0px;
+        border-radius: 10px;
+        border: none;
+    }
+
+    .homePage h2{
+        font-size: 1.8rem;
+        font-family: Roboto-Black;
+    }
+    
+    .homePage h3{
+        font-size: 1.5rem;
+        font-family: Roboto-Bold;
+        color: grey;
+    }
+    
+    .homePage p{
+        font-size: 1rem;
+        font-family: Roboto-Light;
+        color: lightgray;
+    
+    }
+    
+    .homePage button{
+        font-size: 1.2rem;
+        width: 140px;
+        height: 70px;
+        border-radius: 5px;
+        border: none;
+        font-family: Roboto-Bold;
+    }
+}

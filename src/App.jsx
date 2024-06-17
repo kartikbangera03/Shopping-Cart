@@ -7,6 +7,8 @@ function App() {
   const[storeItems , setStoreItems] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const[searchValue , setSearchValue] = useState("");
+  const [filteredStoreItems , setFilteredStoreItems] = useState([]);
 
   const storeApiUrl = "https://fakestoreapi.com/products";
   useEffect(()=>{
@@ -20,6 +22,7 @@ function App() {
       .then((data)=>{
           console.log(data);
           setStoreItems(data)
+          setFilteredStoreItems(data);
       })
       .catch((error)=>setError(error))
       .finally(()=>setLoading(false));
@@ -33,8 +36,15 @@ function App() {
 
   return (
     <>
-    <NavBar cartItems = {cartItems}></NavBar>
-    <Outlet context={[storeItems , cartItems, setCartItems]}/>
+    <NavBar 
+      storeItems = {storeItems}
+      cartItems = {cartItems}
+      searchValue={searchValue}
+      setSearchValue={(newValue)=> setSearchValue(newValue)}
+      setFilteredStoreItems={(newFilteredArray)=>setFilteredStoreItems(newFilteredArray)}
+    
+    ></NavBar>
+    <Outlet context={[storeItems , cartItems, setCartItems, filteredStoreItems , setFilteredStoreItems]}/>
     </>
   )
 }

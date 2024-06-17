@@ -1,7 +1,66 @@
+.storeContainer{
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    /* border: 1px solid blue; */
+}
+
 .ItemCardContainer{
-    padding: 15px;
+    width: 900px;
+    padding-left: 1em;
     display: grid;
-    column-gap: 20px;
     row-gap: 25px;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) ) ;
+}
+
+.sideBar{
+    border: 1px solid grey ;
+    height: max-content;
+    width: 170px;
+    border-bottom: none;
+    border-radius: 5px;
+ /* padding: 1rem; */
+}
+
+.sideBarElement{
+    border-bottom: 1px solid grey;
+    font-family: Roboto-Bold;
+}
+
+.sideBarElement:hover{
+    /* font-size: large; */
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+
+@media only screen and (max-width : 500px) {
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .storeContainer{
+        width: 100vw;
+        padding: 0em;
+        /* border: 5px solid blue; */
+        display: block;       
+    }
+
+    .sideBar{
+        display: none;
+    }
+    
+
+    .ItemCardContainer{
+        padding-top: 20px;
+        width:100vw;
+        /* border: 1px solid purple; */
+        padding-left: 1.5%;
+        display: grid;
+        row-gap: 0vw;
+        /* column-gap: 10px ; */
+        grid-template-columns: repeat(auto-fill, minmax(48vw, 1fr) ) ;
+    }
 }

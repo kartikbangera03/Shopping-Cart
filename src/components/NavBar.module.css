@@ -1,17 +1,168 @@
+@font-face {
+    font-family: Roboto-Black;
+    src: url("../assets/Roboto/Roboto-Black.ttf");
+}
+
+@font-face {
+    font-family: Roboto-Regular;
+    src: url("../assets/Roboto/Roboto-Regular.ttf");
+}
+
+
+
 .navBar{
-    border: 1px solid grey;
+    border-bottom: 1px solid grey;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 0  20px;
+    font-family: Roboto-Regular;
+    box-shadow:  0px 5px 20px #E5E4E2;
 }
 
-.navBarLeft{
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+input{
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color:#E5E4E2;
+    width: 300px;
+    height: 30px;
+}
+
+
+.navBarRightAndSearchBar{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+
+.navBarLeft , .navBarRight{
     display: flex;
     align-items: center;
-    border: 1px solid blue;
     gap: 20px;
 }
 
 
+.navBarLeft h1{
+    font-family: Roboto-Black;
+}
 
+.navBarLeft p:hover , .navBarRight p:hover{
+    border-bottom: 2px solid black;
+
+}
+
+.navBarRight{
+    display: block;
+    
+    /* width: 40px; */
+    height: inherit;
+    position: relative;
+}
+
+.navBarRight p {
+    font-size: 15px;
+    position: absolute;
+    left: 60%;
+    top: 2%;
+}
+
+.searchBarContainer{
+    justify-content: end;
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    width: max-content;
+    padding: 0 10px;
+    background-color: #E5E4E2;
+}
+
+.searchBarContainer:hover , input:hover{
+    background-color:lightgray;  
+}
+
+
+@media only screen and (max-width : 500px) {
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    body{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        width: 100vw;
+    }
+    .navBar{
+        width: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px  5px;
+        overflow: hidden;
+        font-family: Roboto-Regular;
+        box-shadow:  0px 5px 20px #E5E4E2;
+    }
+
+    .navBarRightAndSearchBar{
+        gap: 10px;
+
+    }
+    
+    input{
+        width: 25vw;
+        border-radius: 15px;
+
+    }
+    .searchBarContainer{
+        visibility: visible;
+        width: inherit;
+        padding-left:5px ;
+    }
+
+    .navBarLeft h1:first-child{
+        visibility: hidden;
+        width: 50px;
+    }
+
+    .navBarLeft h1:first-child:before{
+        content: "TH.";
+        visibility: visible;
+    }
+
+    .navBarLeft , .navBarRight{
+        display: flex;
+        align-items: center;
+
+        gap: 12px;
+    }
+
+    .navBarLeft{
+        width: auto;
+        padding-left: 0px;
+        margin-left: 0px;
+        /* border : 1px solid purple; */
+    }
+
+    .navBarRight{
+        /* border: 1px solid purple; */
+        width: 35px;
+    }
+
+    .navBarRight p {
+        font-size: 15px;
+        position: absolute;
+        left: 60%;
+        top: 60%;
+    }
+}
